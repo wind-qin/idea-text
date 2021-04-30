@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="com.fc.bean.Car">
+        <constructor-arg name="mold" value="五菱宏光"/>
+
+        <constructor-arg name="color" value="红色"/>
+    </bean>
+
+    <bean id="student" class="com.fc.bean.Student">
+        <constructor-arg index="0" name="name" value="赵老卢"/>
+        <constructor-arg index="1" name="age" value="20"/>
+        <constructor-arg index="2" name="info" value="想屁"/>
+        <constructor-arg index="3" name="car" ref="car"/>
+    </bean>
+
+    <bean id="house" class="com.fc.bean.House">
+        <constructor-arg name="address" value="河南郑州"/>
+        <constructor-arg name="price" value="1000000"/>
+    </bean>
+
+
+
+    <bean id="user" class="com.fc.bean.User">
+        <constructor-arg index="0" name="name" value="周慧君"/>
+        <constructor-arg index="1" name="age" value="18"/>
+        <constructor-arg index="2" name="house" ref="house"/>
+    </bean>
+
+    <bean id="complexType" class="com.fc.bean.ComplexType">
+        <property name="list">
+            <list>
+                <value>小螺号</value>
+                <value>小小的</value>
+                <value>小小的</value>
+            </list>
+        </property>
+
+        <property name="map">
+           <map>
+              <entry key="海底捞" value="黑米粥"/>
+           </map>
+        </property>
+        <property name="array">
+            <array>
+                <value>123</value>
+            </array>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>123</value>
+            </set>
+        </property>
+    </bean>
+</beans>

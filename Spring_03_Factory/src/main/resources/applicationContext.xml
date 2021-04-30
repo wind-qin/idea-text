@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--通过spring容器创建一个工厂-->
+    <bean id="studentFactory" class="com.fc.factory.StudentFactory"/>
+
+
+    <!--通过工厂对象中的工厂方法获取学生对象
+        factory-bean：用来指定我们的工厂对象，
+        factory-method：用来声明我们的工厂方法，返回值类型就是Bean对象的类型
+    -->
+    <bean id="studentByFactory" factory-bean="studentFactory" factory-method="getStudent"/>
+<!--通过静态工厂中的静态方法声明一个学生对象-->
+    <bean id="studentByStaticFactory" class="com.fc.factory.StudentStaticFactory" factory-method="getStudent"/>
+
+</beans>

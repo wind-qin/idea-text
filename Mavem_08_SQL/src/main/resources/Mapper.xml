@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fc.dao.StudentDao">
+    <!--定义sql片段-->
+    <sql id="Student_field">
+       id,name,age,gender,birthday,info
+    </sql>
+
+    <!--where标签，自动添加上where关键字，并且可以去除and 和 or-->
+    <select id="selectLikeStudent" resultType="com.fc.bean.Student">
+        select
+        <include refid="Student_field"/>
+        from student
+        <where>
+            <if test="name!=null">
+                and name like  #{name}
+            </if>
+            <if test="age!=null">
+                and age like #{age}
+            </if>
+        </where>
+    </select>
+
+    <select id="findById" parameterType="Integer" resultType="com.fc.bean.Student">
+        select 
+        <include refid="Student_field"/>
+        from student where id=#{id}
+    </select>
+
+    <!--if标签用来进行逻辑判断，必须的属性叫text，里面写true或者false的条件
+如果，true执行标签里的内容，否则啥也没了-->
+    <!--添加-->
+    <insert id="add">
+        insert into student(name
+        <if test="age != null">
+            , age
+        </if>
+
+        <if test="gender != null">
+            , gender
+        </if>
+
+        <if test="birthday != null">
+            , birthday
+        </if>
+
+        <if test="info != null">
+            , info
+        </if>
+
+        )values(#{name}
+        <if test="age != null">
+            , #{age}
+        </if>
+
+        <if test="gender != null">
+            , #{gender}
+        </if>
+
+        <if test="birthday != null">
+            , #{birthday}
+        </if>
+
+        <if test="info != null">
+            , #{info}
+        </if>
+        )
+    </insert>
+    <!--修改  set中必须加","-->
+    <update id="update">
+        update student
+        <set>
+            <if test="name!=null">
+                name=#{name},
+            </if>
+            <if test="age!=age">
+                age=#{age},
+            </if>
+            <if test="gender!=null">
+                gender=#{gendaer},
+            </if>
+            <if test="birthday!=null">
+                birthday=#{birthday},
+            </if>
+            <if test="info!=null">
+                info = #{info},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--trim：添加或者移除指定的前缀和后缀
+    prefix：添加指定的前缀
+    prefixOverrides：去除指定的前缀
+    suffix：添加指定的后缀
+    suffixOverrides：去除指定的后缀-->
+    <select id="findByStudent" resultType="com.fc.bean.Student">
+        select
+        <include refid="Student_field"/>
+
+        from student
+
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+        </trim>
+    </select>
+
+    <update id="findUpdete">
+        update student
+        <trim prefix="set" suffix="where" suffixOverrides="," >
+            <if test="name!=null">
+                name=#{name},
+            </if>
+            <if test="age!=age">
+                age=#{age},
+            </if>
+            <if test="gender!=null">
+                gender=#{gendaer},
+            </if>
+            <if test="birthday!=null">
+                birthday=#{birthday},
+            </if>
+            <if test="info!=null">
+                info = #{info},
+            </if>
+        </trim>
+        id=#{id}
+    </update>
+
+
+    <!--foreach标签用来迭代遍历
+    collection：指定容器的类型（array、list、map）
+    open：起始，一般就是(
+    close：结束，一般就是)
+    separator：分隔符
+    item：当前项
+    index：下标
+    -->
+    <select id="findByIds" resultType="com.fc.bean.Student">
+        select
+        <include refid="Student_field"/>
+        from student where id in
+        <foreach collection="array" item="id" index="i" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+
+    </select>
+</mapper>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SSM_02_House_Controller:war">
+    <output-path>$PROJECT_DIR$/SSM_02_House/SSM_02_House_Controller/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SSM_02_House_Controller</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SSM_02_House_Controller-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SSM_02_House_Controller:war exploded" />
+    </root>
+  </artifact>
+</component>

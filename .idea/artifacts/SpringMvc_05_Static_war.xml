@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringMvc_05_Static:war">
+    <output-path>$PROJECT_DIR$/SpringMvc_05_Static/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SpringMvc_05_Static</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SpringMvc_05_Static-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SpringMvc_05_Static:war exploded" />
+    </root>
+  </artifact>
+</component>

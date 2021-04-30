@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tool"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd">
+
+    <!--扫描指定包下注解-->
+    <context:component-scan base-package="com.fc">
+        <!--不扫描@controller下注解-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
+    <!--导入jdbc配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--配置SqlSessionFactoryBean-->
+    <bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+
+        <!--配置数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--加载mybatis-config配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+    </bean>
+
+    <!--配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--配置数据源-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--配置通知(增强)-->
+    <!--<tx:advice id="musicAdvice" transaction-manager="transactionManager">-->
+        <!--<tx:attributes>-->
+            <!--<tx:method name="find*" read-only="true" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="5000"/>-->
+            <!--<tx:method name="select*" read-only="true" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="5000"/>-->
+            <!--<tx:method name="add*" read-only="false" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="5000"/>-->
+            <!--<tx:method name="insert*" read-only="false" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="5000"/>-->
+            <!--<tx:method name="delete*" read-only="false" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="5000"/>-->
+            <!--<tx:method name="drop*" read-only="false" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="5000"/>-->
+            <!--<tx:method name="update*" read-only="false" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="5000"/>-->
+            <!--<tx:method name="modify*" read-only="false" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="5000"/>-->
+            <!--<tx:method name="change*" read-only="false" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="5000"/>-->
+        <!--</tx:attributes>-->
+    <!--</tx:advice>-->
+
+    <!--aop配置-->
+    <!--<aop:config>-->
+        <!--&lt;!&ndash;配置切点&ndash;&gt;-->
+        <!--<aop:pointcut id="pointcut" expression="execution(* com.fc.service.impl.*ServiceImpl.*(..))"/>-->
+
+        <!--&lt;!&ndash;配置切面&ndash;&gt;-->
+        <!--<aop:advisor advice-ref="musicAdvice" pointcut-ref="pointcut"/>-->
+    <!--</aop:config>-->
+
+    <!--注解式事务-->
+    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+
+    <!--扫描dao层接口，用来生成代理对象-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.fc.dao"/>
+    </bean>
+</beans>

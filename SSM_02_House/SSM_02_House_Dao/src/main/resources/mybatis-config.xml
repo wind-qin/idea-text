@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--根标签：配置-->
+<configuration>
+    <!--mybatis设置-->
+    <settings>
+        <!--启用二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
+        <!--启用延时加载-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--每种属性按需加载-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--开启将下划线映射到驼峰命名的规则规则-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--允许多种结果集从一个单独的语句中返回-->
+        <setting name="multipleResultSetsEnabled" value="true"/>
+        <!--使用列标签代替列名-->
+        <setting name="useColumnLabel" value="true"/>
+        <!--允许插入数据中设置主键并返回-->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!--设置默认执行器-->
+        <setting name="defaultExecutorType" value="SIMPLE"/>
+        <!--设置超时时间-->
+        <setting name="defaultStatementTimeout" value="25000"/>
+    </settings>
+
+    <!--起别名-->
+    <typeAliases>
+        <typeAlias type="com.fc.bean.Apply" alias="apply"/>
+        <typeAlias type="com.fc.bean.ApplyExample" alias="ApplyExample"/>
+        <typeAlias type="com.fc.bean.Applyout" alias="Applyout"/>
+        <typeAlias type="com.fc.bean.ApplyoutExample" alias="ApplyoutExample"/>
+        <typeAlias type="com.fc.bean.Checkout" alias="Checkout"/>
+        <typeAlias type="com.fc.bean.CheckoutExample" alias="CheckoutExample"/>
+        <typeAlias type="com.fc.bean.Hetong" alias="Hetong"/>
+        <typeAlias type="com.fc.bean.HetongExample" alias="HetongExample"/>
+        <typeAlias type="com.fc.bean.Houselist" alias="Houselist"/>
+        <typeAlias type="com.fc.bean.HouselistExample" alias="HouselistExample"/>
+        <typeAlias type="com.fc.bean.Paid" alias="Paid"/>
+        <typeAlias type="com.fc.bean.PaidExample" alias="PaidExample"/>
+        <typeAlias type="com.fc.bean.Schedule" alias="Schedule"/>
+        <typeAlias type="com.fc.bean.ScheduleExample" alias="ScheduleExample"/>
+        <typeAlias type="com.fc.bean.Solve" alias="Solve"/>
+        <typeAlias type="com.fc.bean.SolveExample" alias="SolveExample"/>
+        <typeAlias type="com.fc.bean.Topaid" alias="Topaid"/>
+        <typeAlias type="com.fc.bean.TopaidExample" alias="TopaidExample"/>
+        <typeAlias type="com.fc.bean.User" alias="User"/>
+        <typeAlias type="com.fc.bean.UserExample" alias="UserExample"/>
+        <typeAlias type="com.fc.bean.Userlist" alias="Userlist"/>
+        <typeAlias type="com.fc.bean.UserlistExample" alias="UserlistExample"/>
+        <typeAlias type="com.fc.bean.Wrong" alias="Wrong"/>
+        <typeAlias type="com.fc.bean.WrongExample" alias="WrongExample"/>
+        <typeAlias type="com.fc.bean.Zulist" alias="Zulist"/>
+        <typeAlias type="com.fc.bean.ZulistExample" alias="ZulistExample"/>
+    </typeAliases>
+
+    <!--pageHelper-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--方言，告知pageHelper对哪种数据库进行分页-->
+            <property name="helperDialect" value="mysql"/>
+
+            <!--合理化分页参数-->
+            <property name="reasonable" value="true"/>
+
+            <!--通过mapper接口传参-->
+            <property name="supportMethodsArguments" value="true"/>
+        </plugin>
+    </plugins>
+
+    <!--声明映射文件的位置-->
+    <mappers>
+        <mapper resource="com/fc/mapper/ApplyMapper.xml"/>
+        <mapper resource="com/fc/mapper/ApplyoutMapper.xml"/>
+        <mapper resource="com/fc/mapper/CheckoutMapper.xml"/>
+        <mapper resource="com/fc/mapper/HetongMapper.xml"/>
+        <mapper resource="com/fc/mapper/HouselistMapper.xml"/>
+        <mapper resource="com/fc/mapper/PaidMapper.xml"/>
+        <mapper resource="com/fc/mapper/ScheduleMapper.xml"/>
+        <mapper resource="com/fc/mapper/SolveMapper.xml"/>
+        <mapper resource="com/fc/mapper/TopaidMapper.xml"/>
+        <mapper resource="com/fc/mapper/UserlistMapper.xml"/>
+        <mapper resource="com/fc/mapper/UserMapper.xml"/>
+        <mapper resource="com/fc/mapper/WrongMapper.xml"/>
+        <mapper resource="com/fc/mapper/ZulistMapper.xml"/>
+    </mappers>
+</configuration>

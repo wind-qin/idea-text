@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--首先，根标签：mapper，但是有一定的规范，必须和dao层接口名相同（完整的全限定名），必须唯一-->
+<mapper namespace="com.fc.dao.SheetDao">
+
+    <!--查询所有-->
+    <select id="findAll" resultType="tbSheet">
+        select * from tb_sheet
+    </select>
+    <!--查询表单中的歌曲-->
+    <select id="findSongsBySheet" parameterType="String" resultType="tbMusic">
+        select *
+        from tb_music music
+        inner join tb_sheet sheet
+        on music.sheet_id=sheet.id
+        where sheet.sheet_name = #{sheetName}
+    </select>
+
+    <insert id="insertSheet" parameterType="String">
+        insert into tb_sheet(sheet_name) value (#{sheetName})
+    </insert>
+
+</mapper>

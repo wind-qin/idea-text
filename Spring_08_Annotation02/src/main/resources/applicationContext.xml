@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--创建一个dao层对象-->
+    <bean id="daoStudent" class="com.fc.dao.impl.DaoStudentImpl"/>
+
+    <!--创建一个业务层对象-->
+    <bean id="stduentsService" class="com.fc.service.impl.StduentsServiceImpl">
+        <!--注入dao-->
+        <property name="daoStudent" ref="daoStudent"/>
+    </bean>
+<!--创建一个控制层-->
+    <bean id="studentsController" class="com.fc.controller.StudentsController">
+        <!--注入业务层-->
+        <property name="stduentsService" ref="stduentsService"/>
+    </bean>
+
+
+    <import resource="spring.xml"/>
+
+</beans>

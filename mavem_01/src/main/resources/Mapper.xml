@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace对应所需实现的接口全限定名-->
+<mapper namespace="Mapper">
+    <!--id对应所需重写的接口抽象方法，resultType对应查询后所需返回的对象类型-->
+    <insert id="add">
+        <!--SQL语句，参数使用固定格式： #{} -->
+        insert into students(name, age,gerder,info) values('迪丽热巴','28','女','明星')
+    </insert>
+</mapper>

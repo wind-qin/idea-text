@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="asd" />
+        <module name="JWT_01_Starter" />
+        <module name="mavem_01" />
+        <module name="mavem_02" />
+        <module name="mavem_03" />
+        <module name="Mavem_04" />
+        <module name="mavem_05" />
+        <module name="Mavem_06_Lombok" />
+        <module name="Mavem_07_ORM" />
+        <module name="Mavem_08_SQL" />
+        <module name="Mavem_09_Cache" />
+        <module name="Mavem_10_PageHelper" />
+        <module name="Mavem_11_Query" />
+        <module name="Mavem_12_Reverse_Generator" />
+        <module name="Mavem_13" />
+        <module name="Spring_01_SSM" />
+        <module name="Spring_01_Three_layers" />
+        <module name="Spring_02" />
+        <module name="Spring_03_Factory" />
+        <module name="Spring_04_Scope" />
+        <module name="Spring_05_Life" />
+        <module name="Spring_06_dependency_injection" />
+        <module name="Spring_07_Annotation" />
+        <module name="Spring_08_Annotation02" />
+        <module name="Spring_09_spel" />
+        <module name="Spring_10_JdbcTementplate" />
+        <module name="SpringMvc_01_Starter" />
+        <module name="SpringMvc_02_RequstMapping" />
+        <module name="SpringMvc_03_ServletAPI" />
+        <module name="SpringMvc_04_DateFormat" />
+        <module name="SpringMvc_05_Static" />
+        <module name="SpringMvc_06_ResposeDate" />
+        <module name="SpringMvc_07_AjaxJson" />
+        <module name="SpringMvc_08_File" />
+        <module name="SpringMvc_09_Exception" />
+        <module name="SpringMvc_09_exception2" />
+        <module name="SpringMvc_10_interceptor" />
+        <module name="SSM_01_house_01" />
+        <module name="SSM_01_Music" />
+        <module name="SSM_01_Music_02" />
+        <module name="SSM_02_House_Bean" />
+        <module name="SSM_02_House_Controller" />
+        <module name="SSM_02_House_Dao" />
+        <module name="SSM_02_House_Service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="asd" target="1.8" />
+      <module name="JWT_01_Starter" target="1.8" />
+      <module name="Lozy_Loading" target="1.8" />
+      <module name="mavem_01" target="1.8" />
+      <module name="mavem_02" target="1.8" />
+      <module name="mavem_03" target="1.8" />
+      <module name="Mavem_04" target="1.8" />
+      <module name="mavem_05" target="1.8" />
+      <module name="Mavem_06_Lombok" target="1.8" />
+      <module name="Mavem_07_ORM" target="1.8" />
+      <module name="Mavem_08_SQL" target="1.8" />
+      <module name="Mavem_09_Cache" target="1.8" />
+      <module name="Mavem_10_PageHelper" target="1.8" />
+      <module name="Mavem_11_Query" target="1.8" />
+      <module name="mavem_12_Lazy_Loading" target="1.8" />
+      <module name="Mavem_12_Reverse_Generator" target="1.8" />
+      <module name="Mavem_13" target="1.8" />
+      <module name="Spring_01_SSM" target="1.8" />
+      <module name="Spring_01_Three_layers" target="1.8" />
+      <module name="Spring_02" target="1.8" />
+      <module name="Spring_03_Factory" target="1.8" />
+      <module name="Spring_04_Scope" target="1.8" />
+      <module name="Spring_05_Life" target="1.8" />
+      <module name="Spring_06_dependency_injection" target="1.8" />
+      <module name="Spring_07_Annotation" target="1.8" />
+      <module name="Spring_08_Annotation02" target="1.8" />
+      <module name="Spring_09_spel" target="1.8" />
+      <module name="Spring_10_JdbcTementplate" target="1.8" />
+      <module name="SpringMvc_01_Starter" target="1.8" />
+      <module name="SpringMvc_02_RequstMapping" target="1.8" />
+      <module name="SpringMvc_03_ServletAPI" target="1.8" />
+      <module name="SpringMvc_04_DateFormat" target="1.8" />
+      <module name="SpringMvc_04_DateForrmat" target="1.8" />
+      <module name="SpringMvc_05_Static" target="1.8" />
+      <module name="SpringMvc_06_ResposeDate" target="1.8" />
+      <module name="SpringMvc_07_AjaxJson" target="1.8" />
+      <module name="SpringMvc_08_File" target="1.8" />
+      <module name="SpringMvc_09_Exception" target="1.8" />
+      <module name="SpringMvc_09_exception2" target="1.8" />
+      <module name="SpringMvc_10_interceptor" target="1.8" />
+      <module name="SSM01Music02" target="1.8" />
+      <module name="SSM_01_house_01" target="1.8" />
+      <module name="SSM_01_Music" target="1.8" />
+      <module name="SSM_01_Music_02" target="1.8" />
+      <module name="SSM_02_House" target="1.8" />
+      <module name="SSM_02_House_Bean" target="1.8" />
+      <module name="SSM_02_House_Controller" target="1.8" />
+      <module name="SSM_02_House_Dao" target="1.8" />
+      <module name="SSM_02_House_Service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

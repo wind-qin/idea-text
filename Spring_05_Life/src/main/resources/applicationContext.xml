@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student"  init-method="eat" destroy-method="sleep" class="com.fc.bean.Student">
+
+        <constructor-arg index="0" name="name" value="小白"/>
+        <constructor-arg index="1" name="age" value="12"/>
+    </bean>
+</beans>

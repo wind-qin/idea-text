@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringMvc_04_DateFormat:war">
+    <output-path>$PROJECT_DIR$/SpringMvc_04_DateFormat/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SpringMvc_04_DateFormat</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SpringMvc_04_DateFormat-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SpringMvc_04_DateFormat:war exploded" />
+    </root>
+  </artifact>
+</component>
